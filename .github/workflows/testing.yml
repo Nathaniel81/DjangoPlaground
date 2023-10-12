@@ -40,4 +40,5 @@ jobs:
         coverage report
     - name: Django Testing
       run: |
-        python3 manage.py test
+        cd blog/
+        python manage.py test
