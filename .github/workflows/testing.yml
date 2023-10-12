@@ -34,6 +34,7 @@ jobs:
     #     flake8
     - name: Coverage report
       run: |
+        cd blog/
         pip install coverage
         coverage run manage.py test
         coverage report
