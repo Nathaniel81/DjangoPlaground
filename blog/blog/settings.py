@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
+
+    "crispy_forms",
+    "crispy_bootstrap5",
     'core'
 ]
 
@@ -101,6 +103,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/

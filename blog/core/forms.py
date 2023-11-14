@@ -10,5 +10,8 @@ class UniForm(forms.Form):
     
     name = forms.CharField()
     age = forms.IntegerField()
-    subject = forms.ChoiceField(choices=COURSE_CHOICES)
+    subject = forms.ChoiceField(
+        choices=COURSE_CHOICES,
+        widget=forms.RadioSelect()
+        )
     date_of_birth = forms.DateField()
