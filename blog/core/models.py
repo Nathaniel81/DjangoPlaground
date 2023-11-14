@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.contenttypes.fields import GenericForeignKey
 from django.contrib.contenttypes.models import ContentType
 from django.utils.text import slugify
+import uuid
 
 class Post(models.Model):
     title = models.CharField(max_length=255)
@@ -34,3 +35,9 @@ class BlogPost(models.Model):
     def __str__(self):
         return self.title
  
+class MyModel(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    name = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.name
