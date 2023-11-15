@@ -16,7 +16,7 @@ class UniversityForm(forms.ModelForm):
         # self.helper.form_method = 'POST'
         self.helper.form_id = 'university-form'
         self.helper.attrs = {
-            'hx-post': reverse_lazy('index'),
+            'hx-post': reverse_lazy('xpg'),
             'hx-target': '#university-form',
             'hx-swap': 'outerHTML'
         }
