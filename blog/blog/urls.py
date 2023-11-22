@@ -24,4 +24,5 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('xpg/', xpg_views.xpg),
     path('xypg/', include('xypg.urls')),
+    path('pay/', include('intx.urls'))
 ]
