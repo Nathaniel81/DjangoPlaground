@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <script src="https://unpkg.com/htmx.org@1.6.2/dist/htmx.min.js" integrity="sha384-b8NBjCCEVV8f2E3bTq6C+A2EWhL3IHL/H2ElESrB/TpViWNt6L67VbJ7ue09b0vN" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <h1>Feedback Form</h1>
+
+    <form id="feedback-form" hx-post="{% url 'feedback' %}" hx-target="#feedback-form" hx-swap="outerHTML">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div id="error-message" style="color: red;"></div>
+        <button type="submit" hx-trigger="input" hx-target="#error-message" hx-swap="innerHTML" hx-get="{% url 'feedback' %}?validate=true">Submit Feedback</button>
+    </form>
+
+</body>
+</html>
